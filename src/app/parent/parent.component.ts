@@ -16,8 +16,6 @@ import { CommonModule, NgFor } from '@angular/common';
 export class ParentComponent {
   messages: string[] = [];
   constructor(private dataService: DataService) {
-    this.dataService.messages$.subscribe((newMessage) => {
-      this.messages = newMessage;
-    });
+    this.messages = this.dataService.data().messages;
   }
 }
